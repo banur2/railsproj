@@ -3,6 +3,12 @@ require "application_system_test_case"
 class ProductsTest < ApplicationSystemTestCase
   setup do
     @product = products(:one)
+    @update = {
+    :title => 'Lorem Ipsum',
+    :desc => 'Wibbles are fun!',
+    :image_url => 'lorem.jpg',
+    :price => 19.95
+    }
   end
 
   test "visiting the index" do

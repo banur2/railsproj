@@ -1,2 +1,26 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<%if notice %>
+    <p id="notice"><%= notice %></p>
+<%end%>
+
+<H1> Your Mobile Catalog </H1>
+
+<% @products.each do |product|%>
+    <div class="entry">
+        <%= image_tag(product.image_url) %>
+        <H3> <%= product.title %></H3>
+         <%= sanitize(product.desc)  %>
+         <div class="price_line">
+            <div class="price"> 
+               <span class="price"> <%=   number_to_currency(product.price) %></span>
+               <%= button_to "Add to Cart", line_items_path(:product_id=>product)%>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<%end%>
+
+
+

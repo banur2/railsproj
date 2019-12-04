@@ -9,7 +9,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body id="store">
+    <div id="banner">
+      
+      <%= @page_title || "The DEPOT" %>
+    </div>
+    <div id="columns" >
+    <div id="side" >
+        <a href="/" >Home</a><br />
+
+    </div>
+    <div id="main" >
+      <%= yield %>
+    </div>
   </body>
 </html>

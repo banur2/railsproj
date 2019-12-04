@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Your DEPORT Cart</h2>
+
+<ul>
+    <% @cart.line_items.each do |line_item|%>
+        <li><%= line_item.product.title%></li>
+    <%end%>   
+</ul>
